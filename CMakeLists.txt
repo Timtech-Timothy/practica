@@ -19,7 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-# catkin_python_setup()
+catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -160,8 +160,64 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
    src/main.py
+   
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
+
+ catkin_install_python(PROGRAMS
+   src/camera.py
+   
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
+ catkin_install_python(PROGRAMS
+   src/circle_flight.py
+   
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
+ catkin_install_python(PROGRAMS
+ src/flight_marker.py
+ 
+ DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/flight.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/get_telemetry.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/gps.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/leds.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/navigate_wait.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/squere_flight.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS
+src/subscriber.py
+
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
+ 
+
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
