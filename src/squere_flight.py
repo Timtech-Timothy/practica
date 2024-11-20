@@ -16,34 +16,33 @@ set_rates = rospy.ServiceProxy('set_rates', srv.SetRates)
 land = rospy.ServiceProxy('land', Trigger)
 
 print('Take off and hover 1 m above the ground')
-navigate(x=0, y=0, z=1, frame_id='body', auto_arm=True)
+navigate(x=0, y=0, z=1, frame_id='map', auto_arm=True)
 
 # Wait for 5 seconds
 rospy.sleep(5)
 
 print('Fly forward 1 m')
-navigate(x=1, y=0, z=0, frame_id='body')
+navigate(x=5, y=5, z=5, frame_id='map')
 
 # Wait for 5 seconds
-rospy.sleep(5)
+rospy.sleep(20)
 
 print('Fly left 1 m')
-navigate(x=0, y=1, z=0, frame_id='body')
+navigate(x=3, y=3, z=3, frame_id='map')
 
 # Wait for 5 seconds
-rospy.sleep(5)
+rospy.sleep(20)
 
 print('Fly backward 1 m')
-navigate(x=-1, y=0, z=0, frame_id='body')
+navigate(x=2, y=2, z=2, frame_id='map')
 
 # Wait for 5 seconds
-rospy.sleep(5)
+rospy.sleep(20)
 
 print('RTH')
-navigate(x=0, y=-1, z=0, frame_id='body')
-
+navigate(x=0, y=0, z=1, frame_id='map')
 # Wait for 5 seconds
-rospy.sleep(5)
+rospy.sleep(30)
 
 print('Perform landing')
 land()

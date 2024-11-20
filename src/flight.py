@@ -23,10 +23,10 @@ navigate(x=0, y=0, z=1, frame_id='map', auto_arm=True)
 rospy.sleep(5)
 
 print('Fly forward 1 m')
-navigate(x=1, y=0, z=1, frame_id='map')
+navigate(x=0, y=0, z=1, frame_id='map')
 
 # Wait for 5 seconds
-rospy.sleep(300)
+rospy.sleep(5)
 
 print('Perform landing')
 land()
